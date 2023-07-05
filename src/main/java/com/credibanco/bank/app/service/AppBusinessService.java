@@ -160,8 +160,7 @@ public class AppBusinessService {
 		String comp_tarjeta = cardId.substring(cardId.length() - 10);
 		Tarjeta tarjeta = tarjetaRepo.findNumCard(productId, comp_tarjeta);
 		Transaccion tr = transaccionRepo.getTransaccionById(transId);
-		System.out.println(getDifferenceHoursDates(tr.getFecha_transaccion(), new java.util.Date()));
-
+		
 		if (tarjeta == null) {
 			throw new Exception("No existe tarjeta asociada");
 		} else if (tr == null) {
